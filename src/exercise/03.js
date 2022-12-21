@@ -32,7 +32,7 @@ function Toggle(props) {
 function useToggle() {
   const context = React.useContext(ToggleContext)
   if (!context) {
-    throw new Error('useToggle must be used within the ToggleContexts Provider')
+    throw new Error('useToggle can only be used within the <Toggle> Component')
   }
   return context
 }
