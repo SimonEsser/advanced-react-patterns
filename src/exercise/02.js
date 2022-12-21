@@ -24,14 +24,14 @@ function Toggle({children, ...props}) {
 // 🐨 Flesh out each of these components
 
 // Accepts `on` and `children` props and returns `children` if `on` is true
-const ToggleOn = props => <>{props.on ? 'The button is on' : null}</>
+const ToggleOn = ({on, children}) => <>{on && children}</>
 
 // Accepts `on` and `children` props and returns `children` if `on` is false
-const ToggleOff = props => <>{!props.on ? 'The button is off' : null}</>
+const ToggleOff = ({on, children}) => <>{!on && children}</>
 
 // Accepts `on` and `toggle` props and returns the <Switch /> with those props.
-const ToggleButton = props => {
-  return <Switch on={props.on} onClick={props.toggle} />
+const ToggleButton = ({on, toggle}) => {
+  return <Switch on={on} onClick={toggle} />
 }
 
 function App() {
